@@ -1,31 +1,11 @@
 class RufMenubar extends HTMLElement {
   constructor() {
     super();
-    this.items;
+    //this.items;
     //attachs shadow dom to element and sets shadowRoot property
-    this.attachShadow({ mode: 'open' });
-    this.shadowRoot.innerHTML = `
-    <style>
-      .menubar-style {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          border: 1px solid #b3bfc2;
-      }
-      .ruf-menubar-item {
-        padding: 10px 15px;
-        cursor: pointer;
-        border-bottom: solid 4px transparent;
-      }
-      .ruf-menubar-item:hover {
-          background:  #ffffff26;
-      }
+    //this.attachShadow({ mode: 'open' });
 
-      .ruf-ruf-menubar-item-active {
-        border-bottom-color: #4bcd3e;
-      }
-    </style>
-  
+    this.shadowRoot.innerHTML = `
     <div id="menubar-container" class="menubar-style">
         <div class="ruf-menubar-item">Item1</div>
         <div class="ruf-menubar-item">Item2</div>
@@ -37,5 +17,5 @@ class RufMenubar extends HTMLElement {
   connectedCallback() {}
 }
 
-//registering custom element
+//registering and define custom element
 customElements.define('ruf-menubar', RufMenubar);

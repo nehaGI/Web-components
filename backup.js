@@ -42,6 +42,7 @@ class RufMenubar extends HTMLElement {
     let data = document.querySelector('ruf-menubar').getAttribute('items');
     //converting data into array
     this.items = data.split(',');
+
     let menubarContainer = this.shadowRoot.getElementById('menubar-container');
 
     //generating div based on number of elements in items attribute
@@ -90,7 +91,7 @@ class RufMenubar extends HTMLElement {
   disconnectedCallback() {
     const menubarItem = this.shadowRoot.querySelectorAll('.ruf-menubar-item');
     menubarItem.forEach((ele) => {
-      ele.removeEventListener('click', this.selectChange.bind(this));
+      ele.removeEventListener('click', this.elementClicked.bind(this));
     });
   }
 }
